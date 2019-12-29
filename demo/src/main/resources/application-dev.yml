@@ -1,0 +1,36 @@
+server:
+  port: 8024
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+#  thymeleaf:
+#    cache: false
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    encoding: utf-8
+#    mode: html5
+#    servlet:
+#      content-type: text/html
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.demo.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+
+##自定义
+#my:
+#  tokenURL: "55555"
+#  authURL: "88888"
